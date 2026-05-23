@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Game Balap Mobil</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Game Balap Mobil</h1>
+      <p>Gunakan panah kiri/kanan untuk bergerak. Tangkap power-up dan hindari rintangan!</p>
+    </header>
+
+    <section class="panel">
+      <div class="stats">
+        <div>Skor: <span id="score">0</span></div>
+        <div>High Score: <span id="highScore">0</span></div>
+        <div>Kecepatan: <span id="speed">1</span></div>
+        <div>Level: <span id="level">1</span></div>
+      </div>
+      <div class="controls">
+        <button id="startBtn">Mulai</button>
+        <button id="pauseBtn" disabled>Jeda</button>
+        <button id="resetBtn">Reset</button>
+      </div>
+    </section>
+
+    <div class="game-area">
+      <canvas id="gameCanvas" width="480" height="720"></canvas>
+      <div class="overlay">
+        <div class="message" id="message">Tekan Mulai untuk bermain</div>
+      </div>
+    </div>
+
+    <section class="features">
+      <h2>Fitur</h2>
+      <ul>
+        <li>Kontrol keyboard panah kiri/kanan dan tombol pada layar</li>
+        <li>Skor dan high score dengan penyimpanan lokal</li>
+        <li>Power-up nitro untuk meningkatkan kecepatan sementara</li>
+        <li>Rintangan yang harus dihindari</li>
+        <li>Level yang meningkat seiring berjalannya waktu</li>
+      </ul>
+    </section>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

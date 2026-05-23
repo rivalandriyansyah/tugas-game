@@ -1,0 +1,157 @@
+:root {
+  --bg: #101820;
+  --road: #2d2f36;
+  --road-line: #f7f7f7;
+  --accent: #f24c4c;
+  --text: #f5f6fa;
+  --muted: #a2a6b0;
+  --panel: rgba(16, 24, 32, 0.95);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  font-family: 'Inter', sans-serif;
+  background: radial-gradient(circle at top, #2f3c59 0%, #101820 65%);
+  color: var(--text);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+}
+
+.container {
+  width: min(100%, 960px);
+  display: grid;
+  gap: 20px;
+}
+
+header {
+  text-align: center;
+}
+
+h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+p {
+  color: var(--muted);
+  margin-top: 10px;
+}
+
+.panel {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  justify-content: space-between;
+  background: var(--panel);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 18px;
+}
+
+.stats {
+  display: grid;
+  gap: 8px;
+  min-width: 200px;
+}
+
+.stats div {
+  font-size: 0.95rem;
+}
+
+.controls {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+button {
+  border: none;
+  border-radius: 12px;
+  padding: 12px 18px;
+  background: linear-gradient(135deg, #f24c4c 0%, #ff8a5c 100%);
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+button:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+.game-area {
+  position: relative;
+  background: #0b101b;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.45);
+}
+
+canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: var(--road);
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+}
+
+.message {
+  background: rgba(0, 0, 0, 0.65);
+  padding: 14px 18px;
+  border-radius: 14px;
+  color: #fff;
+  font-size: 1.1rem;
+  text-align: center;
+  max-width: 85%;
+}
+
+.features {
+  background: var(--panel);
+  border-radius: 20px;
+  padding: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.features h2 {
+  margin-bottom: 12px;
+}
+
+.features ul {
+  list-style: inside disc;
+  gap: 10px;
+  display: grid;
+}
+
+.features li {
+  color: var(--muted);
+}
+
+@media (max-width: 640px) {
+  .panel {
+    flex-direction: column;
+  }
+
+  button {
+    flex: 1 1 100%;
+  }
+}
